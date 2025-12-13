@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VulkanSeeds – Premium Minecraft Seeds for Java & Bedrock</title>
+<meta name="description" content="VulkanSeeds offers premium Minecraft seeds for Java and Bedrock editions. Filter by version, edition, and playstyle. Curated, tested, and updated." />
+<meta name="keywords" content="minecraft seeds, java seeds, bedrock seeds, premium minecraft seeds, survival seeds, village seeds" />
+<meta name="robots" content="index, follow" />
+
+<!-- Premium modern fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0b0b;
+  --panel:#111111;
+  --panel-hover:#1a1a1a;
+  --border:#262626;
+  --text:#f5f5f5;
+  --muted:#a1a1aa;
+  --yellow:#facc15;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,sans-serif;
+}
+
+/* TOP BAR */
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(15,15,15,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  max-width:1400px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:'Space Grotesk',system-ui,sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.6px;
+}
+
+.logo span{color:var(--yellow)}
+
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+  font-weight:500;
+}
+nav a:hover{color:var(--text)}
+
+/* HERO */
+.hero{
+  max-width:1400px;
+  margin:40px auto 20px;
+  padding:0 20px;
+}
+
+.hero h1{
+  font-family:'Space Grotesk',system-ui,sans-serif;
+  font-size:42px;
+  margin:0 0 10px;
+  letter-spacing:-0.5px;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:16px;
+  max-width:600px;
+}
+
+/* LAYOUT */
+.main{
+  max-width:1400px;
+  margin:auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:24px;
+}
+
+/* SIDEBAR */
+.sidebar{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  height:fit-content;
+}
+
+.sidebar h3{
+  margin:0 0 12px;
+  font-size:13px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.sidebar a{
+  display:block;
+  padding:10px 12px;
+  border-radius:8px;
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  font-family:'Space Grotesk',system-ui,sans-serif;
+}
+
+.sidebar a:hover{background:var(--panel-hover)}
+.sidebar a.active{background:rgba(250,204,21,0.15);color:var(--yellow)}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:18px;
+}
+
+/* CARD (Modrinth-like) */
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+  text-decoration:none;
+  color:inherit;
+  outline:none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card:visited{color:inherit}
+.card:focus{outline:none}
+.card:focus-visible{outline:2px solid rgba(250,204,21,0.5); outline-offset:2px}
+
+.card:hover{
+  transform:translateY(-3px) scale(1.01);
+  border-color:var(--yellow);
+  box-shadow:0 0 0 1px rgba(250,204,21,.2), 0 10px 30px rgba(250,204,21,.15);
+}
+
+.card:active{
+  transform:translateY(-1px) scale(0.99);
+}
+
+
+
+.card-body{
+  padding:14px;
+}
+
+.badge{
+  display:inline-block;
+  background:rgba(250,204,21,0.15);
+  color:var(--yellow);
+  font-size:12px;
+  padding:4px 8px;
+  border-radius:999px;
+  margin-bottom:8px;
+}
+
+.card h4{
+  margin:6px 0 6px;
+  font-size:16px;
+  font-weight:600;
+  font-family:'Space Grotesk',system-ui,sans-serif;
+}
+
+.card p{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);
+  margin-top:40px;
+  padding:30px 20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+@media(max-width:900px){
+  .main{grid-template-columns:1fr}
+  .sidebar{order:2}
+  header nav{display:none}
+}
+
+@media(max-width:500px){
+  .hero h1{font-size:30px}
+  .card h4{font-size:15px}
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "VulkanSeeds",
+  "url": "https://vulkanseeds.github.io",
+  "description": "Premium Minecraft seeds for Java and Bedrock editions, curated and versioned.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "VulkanSeeds"
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Vulkan<span>Seeds</span></div>
+<button id="themeToggle" style="background:var(--panel);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:13px">☀ / 🌙</button>
+    <nav>
+      <a href="#">Browse</a>
+      <a href="#">Java</a>
+      <a href="#">Bedrock</a>
+      <a href="#">Submit</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Premium Minecraft Seeds</h1>
+  <p>Discover high-quality Minecraft seeds for Java and Bedrock editions. Tested, versioned, and curated.</p>
+</section>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Search</h3>
+    <input id="searchInput" placeholder="Search seeds..." style="width:100%;padding:8px;border-radius:8px;background:var(--panel);color:var(--text);border:1px solid var(--border);margin-bottom:14px" />
+    <h3>Filters</h3>
+    <a href="#" data-filter="all" class="active">All Seeds</a>
+    <a href="#" data-filter="java">Java Edition</a>
+    <a href="#" data-filter="bedrock">Bedrock Edition</a>
+
+    <h3 style="margin-top:16px">Version</h3>
+    <select id="versionFilter" style="width:100%;padding:8px;border-radius:8px;background:var(--panel);color:var(--text);border:1px solid var(--border)">
+      <option value="all">All Versions</option>
+      <option value="1.21.4">1.21.4</option>
+      <option value="1.21">1.21.x</option>
+      <option value="1.20">1.20.x</option>
+      <option value="1.19">1.19.x</option>
+    </select>
+  </aside>
+
+  <section>
+    <div class="grid" id="seedGrid">
+      <!-- Seeds will be generated here -->
+    </div>
+    <div id="pagination" style="margin-top:24px;display:flex;gap:8px;flex-wrap:wrap"></div>
+  </section>
+</div>
+
+<!-- SEED DETAIL MODAL -->
+<div id="seedModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);z-index:50;">
+  <div style="max-width:720px;margin:8vh auto;background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px;">
+    <h2 id="modalTitle" style="font-family:'Space Grotesk';margin-top:0"></h2>
+    <p id="modalEdition" class="badge"></p>
+    <p id="modalSeed"></p>
+    <button id="copyBtn" style="margin-top:8px;background:var(--panel-hover);border:1px solid var(--border);padding:8px 14px;border-radius:8px;font-weight:500;color:var(--text);cursor:pointer">Copy Seed</button>
+    <p id="modalDesc" style="color:var(--muted);margin-top:12px"></p>
+    <button onclick="closeModal()" style="margin-top:18px;background:var(--yellow);border:none;padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer">Close</button>
+  </div>
+</div>
+
+<footer>
+  © 2025 VulkanSeeds • Minecraft Seeds • Not affiliated with Mojang
+</footer>
+
+<script>
+// REALISTIC SEED NAMES & DESCRIPTIONS
+const javaVersions = ['1.18','1.19','1.19.4','1.20','1.20.1','1.20.4','1.21','1.21.1','1.21.2','1.21.3','1.21.4'];
+const bedrockVersions = ['1.18','1.19','1.20','1.20.1','1.20.4','1.21','1.21.1','1.21.2','1.21.3','1.21.4'];
+
+const seedTypes = [
+  { name:'Village & Stronghold Spawn', desc:'Spawn near multiple villages with an exposed stronghold not far from spawn. Ideal for survival and progression-focused worlds.' },
+  { name:'Speedrun Nether Access', desc:'Quick access to lava pools and ruined portals near spawn. Stronghold generates unusually close, making this seed perfect for speedruns.' },
+  { name:'Massive Mountain Range', desc:'Huge snow-capped mountains dominate the spawn area with nearby plains and caves. Great for builders and scenic bases.' },
+  { name:'Biome-Rich Survival World', desc:'Multiple major biomes within a short distance, including desert, forest, and ocean. Excellent for long-term survival.' },
+  { name:'Island Survival Challenge', desc:'Spawn on a medium-sized island surrounded by ocean monuments and shipwrecks. Balanced challenge without being hardcore.' },
+  { name:'Ancient City Below Spawn', desc:'Deep Dark and an Ancient City generate beneath spawn. High risk, high reward seed for experienced players.' }
+];
+
+const seeds = [];
+for(let i=1;i<=120;i++){
+  const isJava = i % 2 === 0;
+  const version = isJava
+    ? javaVersions[Math.floor(Math.random()*javaVersions.length)]
+    : bedrockVersions[Math.floor(Math.random()*bedrockVersions.length)];
+
+  const type = seedTypes[i % seedTypes.length];
+
+  seeds.push({
+    title: type.name,
+    seed: Math.floor(Math.random()*9000000000),
+    editionType: isJava ? 'java' : 'bedrock',
+    editionLabel: `${isJava ? 'Java' : 'Bedrock'} ${version}`,
+    desc: type.desc
+  });
+}
+
+const grid = document.getElementById('seedGrid');
+
+// THEME TOGGLE
+const themeBtn = document.getElementById('themeToggle');
+let darkMode = true;
+themeBtn.addEventListener('click',()=>{
+  darkMode = !darkMode;
+  document.documentElement.style.setProperty('--bg', darkMode?'#0b0b0b':'#f8f8f8');
+  document.documentElement.style.setProperty('--panel', darkMode?'#111111':'#ffffff');
+  document.documentElement.style.setProperty('--panel-hover', darkMode?'#1a1a1a':'#f1f1f1');
+  document.documentElement.style.setProperty('--border', darkMode?'#262626':'#dddddd');
+  document.documentElement.style.setProperty('--text', darkMode?'#f5f5f5':'#111111');
+  document.documentElement.style.setProperty('--muted', darkMode?'#a1a1aa':'#555555');
+});
+
+let currentPage = 1;
+const perPage = 12;
+
+function renderSeeds(filter='all'){
+  const versionVal = document.getElementById('versionFilter').value;
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  grid.innerHTML = '';
+
+  const filtered = seeds.filter(s => {
+    const editionMatch = filter==='all' || s.editionType===filter;
+    const versionMatch = versionVal==='all' || s.editionLabel.includes(versionVal);
+    const searchMatch = s.title.toLowerCase().includes(query) || s.desc.toLowerCase().includes(query);
+    return editionMatch && versionMatch && searchMatch;
+  });
+
+  const start = (currentPage-1)*perPage;
+  const pageItems = filtered.slice(start, start+perPage);
+
+  pageItems.forEach(s => {
+    grid.innerHTML += `
+      <a class="card" href="javascript:void(0)" onclick='goToSeed(${JSON.stringify(s)})'>
+        <div class="card-body">
+          <span class="badge">${s.editionLabel}</span>
+          <h4>${s.title}</h4>
+          <p><strong>Seed:</strong> ${s.seed}</p>
+          <p style="margin-top:6px;color:var(--muted)">${s.desc}</p>
+        </div>
+      </a>`;
+  });
+
+  renderPagination(filtered.length, filter);
+}
+
+function renderPagination(total, filter){
+  const pages = Math.ceil(total/perPage);
+  const container = document.getElementById('pagination');
+  container.innerHTML = '';
+  if(pages<=1) return;
+
+  for(let i=1;i<=pages;i++){
+    const btn = document.createElement('button');
+    btn.textContent = i;
+    btn.style.padding='6px 10px';
+    btn.style.borderRadius='8px';
+    btn.style.border='1px solid var(--border)';
+    btn.style.background=i===currentPage?'var(--yellow)':'var(--panel)';
+    btn.style.color=i===currentPage?'#000':'var(--text)';
+    btn.onclick=()=>{currentPage=i;renderSeeds(filter)};
+    container.appendChild(btn);
+  }
+}
+
+function goToSeed(seed){
+  document.getElementById('seedModal').style.display='block';
+  document.getElementById('modalTitle').innerText = seed.title;
+  document.getElementById('modalEdition').innerText = seed.editionLabel;
+  document.getElementById('modalSeed').innerHTML = `<strong>Seed:</strong> ${seed.seed}`;
+  document.getElementById('modalDesc').innerText = seed.desc;
+
+  const btn = document.getElementById('copyBtn');
+  btn.innerText = 'Copy Seed';
+  btn.onclick = () => {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(String(seed.seed)).then(() => btn.innerText='Copied ✓');
+    } else {
+      fallbackCopy(seed.seed);
+    }
+  };
+}
+
+renderSeeds();
+
+// SEARCH
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', ()=>{currentPage=1;const active=document.querySelector('.sidebar a.active');renderSeeds(active?active.dataset.filter:'all');});
+
+function fallbackCopy(text){
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+  try {
+    document.execCommand('copy');
+    document.getElementById('copyBtn').innerText = 'Copied ✓';
+  } catch (err) {
+    document.getElementById('copyBtn').innerText = 'Failed';
+  }
+  document.body.removeChild(textarea);
+}
+
+function closeModal(){
+  document.getElementById('seedModal').style.display = 'none';
+}
+
+// FILTERS
+const filterLinks = document.querySelectorAll('[data-filter]');
+filterLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    filterLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    renderSeeds(link.dataset.filter);
+  });
+});
+
+const versionSelect = document.getElementById('versionFilter');
+versionSelect.addEventListener('change', () => {
+  const active = document.querySelector('.sidebar a.active');
+  renderSeeds(active ? active.dataset.filter : 'all');
+});
+</script>
+
+</body>
+</html>
