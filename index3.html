@@ -1,0 +1,126 @@
+<!DOCTYPE html><html><head>
+<title>VulkanSeeds – Page 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{--accent:#f4c430;--bg:#0b0b0f;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--border:#1f2937}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui;background:var(--bg);color:var(--text)}
+header{max-width:1100px;margin:auto;padding:60px 20px 30px}
+header h1{margin:0;font-size:40px}
+header p{color:var(--muted)}
+.controls{max-width:1100px;margin:auto;padding:0 20px 20px;display:flex;gap:10px;flex-wrap:wrap}
+button,select{background:#111827;color:var(--text);border:1px solid var(--border);padding:10px 14px;border-radius:10px;cursor:pointer}
+button.active{border-color:var(--accent);color:var(--accent)}
+main{max-width:1100px;margin:auto;padding:0 20px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;transition:.15s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 25px rgba(244,196,48,.08)}
+.card h3{margin:0 0 6px}
+.card p{margin:4px 0;color:var(--muted);font-size:14px}
+footer{text-align:center;color:var(--muted);padding:30px;border-top:1px solid var(--border)}
+a{text-decoration:none;color:inherit}
+.pagination{text-align:center;margin-bottom:40px}
+.pagination a{margin:0 6px;color:var(--accent)}
+</style>
+<script>
+function copySeed(s){navigator.clipboard.writeText(s)}
+function filterEdition(type){
+ document.querySelectorAll('.card').forEach(c=>{
+  c.style.display = type==='all'||c.dataset.edition===type?'block':'none'
+ })
+ document.querySelectorAll('.edition').forEach(b=>b.classList.remove('active'))
+ document.getElementById(type).classList.add('active')
+}
+function filterVersion(v){
+ document.querySelectorAll('.card').forEach(c=>{
+  c.style.display = v==='all'||c.dataset.version===v?'block':'none'
+ })
+}
+</script>
+
+</head><body>
+<header><h1>Premium Minecraft Seeds</h1><p>Real curated seeds for Java & Bedrock</p></header>
+
+<div class="controls">
+<button id="all" class="edition active" onclick="filterEdition('all')">All</button>
+<button id="java" class="edition" onclick="filterEdition('java')">Java</button>
+<button id="bedrock" class="edition" onclick="filterEdition('bedrock')">Bedrock</button>
+
+<select onchange="filterVersion(this.value)">
+<option value="all">All versions</option>
+<option value="1.21">1.21</option>
+<option value="1.21.4">1.21.4</option>
+<option value="1.20+">1.20+</option>
+</select>
+</div>
+
+<main>
+<div class="card" data-edition="java" data-version="1.21">
+<h3>Coral Ocean Spawn</h3>
+<p>Seed: 314159265</p>
+<p>Java 1.21</p>
+<button onclick="copySeed('314159265')">Copy Seed</button><br><br>
+<a href="coral-ocean-spawn.html">View details →</a>
+</div>
+
+<div class="card" data-edition="java" data-version="1.21">
+<h3>Savanna Plateau Village</h3>
+<p>Seed: 101010101</p>
+<p>Java 1.21</p>
+<button onclick="copySeed('101010101')">Copy Seed</button><br><br>
+<a href="savanna-plateau-village.html">View details →</a>
+</div>
+
+<div class="card" data-edition="bedrock" data-version="1.21">
+<h3>Snowy Village Start</h3>
+<p>Seed: -202020202</p>
+<p>Bedrock 1.21</p>
+<button onclick="copySeed('-202020202')">Copy Seed</button><br><br>
+<a href="snowy-village-start.html">View details →</a>
+</div>
+
+<div class="card" data-edition="java" data-version="1.21">
+<h3>Jungle Temple Near Spawn</h3>
+<p>Seed: 303030303</p>
+<p>Java 1.21</p>
+<button onclick="copySeed('303030303')">Copy Seed</button><br><br>
+<a href="jungle-temple-near-spawn.html">View details →</a>
+</div>
+
+<div class="card" data-edition="bedrock" data-version="1.21">
+<h3>Mesa Plateau Spawn</h3>
+<p>Seed: -404040404</p>
+<p>Bedrock 1.21</p>
+<button onclick="copySeed('-404040404')">Copy Seed</button><br><br>
+<a href="mesa-plateau-spawn.html">View details →</a>
+</div>
+
+<div class="card" data-edition="java" data-version="1.21">
+<h3>Forest Stronghold</h3>
+<p>Seed: 505050505</p>
+<p>Java 1.21</p>
+<button onclick="copySeed('505050505')">Copy Seed</button><br><br>
+<a href="forest-stronghold.html">View details →</a>
+</div>
+
+<div class="card" data-edition="bedrock" data-version="1.21">
+<h3>Taiga Village Lake</h3>
+<p>Seed: -606060606</p>
+<p>Bedrock 1.21</p>
+<button onclick="copySeed('-606060606')">Copy Seed</button><br><br>
+<a href="taiga-village-lake.html">View details →</a>
+</div>
+
+<div class="card" data-edition="java" data-version="1.21">
+<h3>Mountain Ring Valley</h3>
+<p>Seed: 707070707</p>
+<p>Java 1.21</p>
+<button onclick="copySeed('707070707')">Copy Seed</button><br><br>
+<a href="mountain-ring-valley.html">View details →</a>
+</div>
+</main>
+
+<div class="pagination"><a href="index1.html">1</a><a href="index2.html">2</a><a href="index3.html">3</a></div>
+
+<footer>© 2025 VulkanSeeds</footer>
+</body></html>
