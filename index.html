@@ -1,194 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Premium Minecraft Seeds | VulkanSeeds</title>
-  <meta name="description" content="VulkanSeeds is a curated collection of premium Minecraft seeds for Java and Bedrock editions. Discover the best village, survival, and biome seeds." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html><html><head>
+<title>VulkanSeeds – Page 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- AdSense (HEAD ONLY – OK) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6891300070780198"
-    crossorigin="anonymous"></script>
+<style>
+:root{--accent:#f4c430;--bg:#0b0b0f;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--border:#1f2937}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui;background:var(--bg);color:var(--text)}
+header{max-width:1100px;margin:auto;padding:60px 20px 30px}
+header h1{margin:0;font-size:40px}
+header p{color:var(--muted)}
+.controls{max-width:1100px;margin:auto;padding:0 20px 20px;display:flex;gap:10px;flex-wrap:wrap}
+button,select{background:#111827;color:var(--text);border:1px solid var(--border);padding:10px 14px;border-radius:10px;cursor:pointer}
+button.active{border-color:var(--accent);color:var(--accent)}
+main{max-width:1100px;margin:auto;padding:0 20px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;transition:.15s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 25px rgba(244,196,48,.08)}
+.card h3{margin:0 0 6px}
+.card p{margin:4px 0;color:var(--muted);font-size:14px}
+footer{text-align:center;color:var(--muted);padding:30px;border-top:1px solid var(--border)}
+a{text-decoration:none;color:inherit}
+.pagination{text-align:center;margin-bottom:40px}
+.pagination a{margin:0 6px;color:var(--accent)}
+</style>
+<script>
+function copySeed(s){navigator.clipboard.writeText(s)}
+function filterEdition(type){
+ document.querySelectorAll('.card').forEach(c=>{
+  c.style.display = type==='all'||c.dataset.edition===type?'block':'none'
+ })
+ document.querySelectorAll('.edition').forEach(b=>b.classList.remove('active'))
+ document.getElementById(type).classList.add('active')
+}
+function filterVersion(v){
+ document.querySelectorAll('.card').forEach(c=>{
+  c.style.display = v==='all'||c.dataset.version===v?'block':'none'
+ })
+}
+</script>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
-      background: #0b0b0f;
-      color: #e5e7eb;
-    }
-    header {
-      padding: 40px 20px;
-      text-align: center;
-      background: #0f0f14;
-      border-bottom: 1px solid #1f2937;
-    }
-    header h1 {
-      color: #facc15;
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    header p {
-      color: #9ca3af;
-      max-width: 700px;
-      margin: auto;
-    }
-    section {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .seed-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .seed-card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .seed-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 0 1px #facc15;
-    }
-    .seed-card h3 {
-      color: #facc15;
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #1f2937;
-      color: #9ca3af;
-    }
-    footer a {
-      color: #facc15;
-      text-decoration: none;
-      margin: 0 6px;
-    }
-  </style>
-</head>
+</head><body>
+<header><h1>Premium Minecraft Seeds</h1><p>Real curated seeds for Java & Bedrock</p></header>
 
-<body>
+<div class="controls">
+<button id="all" class="edition active" onclick="filterEdition('all')">All</button>
+<button id="java" class="edition" onclick="filterEdition('java')">Java</button>
+<button id="bedrock" class="edition" onclick="filterEdition('bedrock')">Bedrock</button>
 
-<header>
-  <h1>Premium Minecraft Seeds</h1>
-  <p>
-    VulkanSeeds is a curated collection of high-quality Minecraft seeds
-    for Java and Bedrock Editions. All seeds are selected for survival,
-    exploration, and long-term gameplay.
-  </p>
-</header>
+<select onchange="filterVersion(this.value)">
+<option value="all">All versions</option>
+<option value="1.21">1.21</option>
+<option value="1.21.4">1.21.4</option>
+<option value="1.20+">1.20+</option>
+</select>
+</div>
 
-<section>
-  <h2>Featured Minecraft Seeds</h2>
-  <p>
-    Discover the best Minecraft seeds including villages, rare biomes,
-    survival spawns, and powerful starting locations across the latest versions.
-  </p>
-</section>
+<main>
+<div class="card" data-edition="java" data-version="1.21.4">
+<h3>Triple Village Plains</h3>
+<p>Seed: -4231239123</p>
+<p>Java 1.21.4</p>
+<button onclick="copySeed('-4231239123')">Copy Seed</button><br><br>
+<a href="triple-village-plains.html">View details →</a>
+</div>
 
-<section class="seed-grid">
+<div class="card" data-edition="java" data-version="1.20+">
+<h3>Ancient City Beneath Spawn</h3>
+<p>Seed: -6778246788154565662</p>
+<p>Java 1.20+</p>
+<button onclick="copySeed('-6778246788154565662')">Copy Seed</button><br><br>
+<a href="ancient-city-beneath-spawn.html">View details →</a>
+</div>
 
-  <div class="seed-card">
-    <h3>Triple Village Spawn</h3>
-    <p><b>Seed:</b> -4231239123</p>
-    <p><b>Edition:</b> Java</p>
-    <p><b>Version:</b> 1.21</p>
-    <p>
-      Spawn near three villages within 400 blocks along with a ruined portal.
-      Perfect for early trading and survival gameplay.
-    </p>
-  </div>
+<div class="card" data-edition="java" data-version="1.21">
+<h3>Cherry Grove Valley</h3>
+<p>Seed: 903147297845</p>
+<p>Java 1.21</p>
+<button onclick="copySeed('903147297845')">Copy Seed</button><br><br>
+<a href="cherry-grove-valley.html">View details →</a>
+</div>
 
-  <div class="seed-card">
-    <h3>Survival Island Challenge</h3>
-    <p><b>Seed:</b> 892347112</p>
-    <p><b>Edition:</b> Bedrock</p>
-    <p><b>Version:</b> 1.20+</p>
-    <p>
-      Start on a small isolated island with buried treasure and ocean ruins nearby.
-      Ideal for hardcore survival players.
-    </p>
-  </div>
+<div class="card" data-edition="bedrock" data-version="1.21.4">
+<h3>Island Survival</h3>
+<p>Seed: 1256429187</p>
+<p>Bedrock 1.21.4</p>
+<button onclick="copySeed('1256429187')">Copy Seed</button><br><br>
+<a href="island-survival.html">View details →</a>
+</div>
 
-  <div class="seed-card">
-    <h3>Mesa + Desert Temple</h3>
-    <p><b>Seed:</b> 129874563</p>
-    <p><b>Edition:</b> Java</p>
-    <p><b>Version:</b> 1.21</p>
-    <p>
-      Mesa biome spawn with a desert temple and exposed mineshafts offering
-      early loot and fast progression.
-    </p>
-  </div>
+<div class="card" data-edition="bedrock" data-version="1.20+">
+<h3>Speedrun Lava Pool</h3>
+<p>Seed: -2927611861</p>
+<p>Bedrock 1.20+</p>
+<button onclick="copySeed('-2927611861')">Copy Seed</button><br><br>
+<a href="speedrun-lava-pool.html">View details →</a>
+</div>
 
-  <div class="seed-card">
-    <h3>Mountain Village Base</h3>
-    <p><b>Seed:</b> -782349812</p>
-    <p><b>Edition:</b> Bedrock</p>
-    <p><b>Version:</b> 1.21</p>
-    <p>
-      Spawn next to a mountain village surrounded by snowy peaks,
-      perfect for scenic builds and survival bases.
-    </p>
-  </div>
+<div class="card" data-edition="bedrock" data-version="1.21">
+<h3>Village Over Stronghold</h3>
+<p>Seed: 623812741</p>
+<p>Bedrock 1.21</p>
+<button onclick="copySeed('623812741')">Copy Seed</button><br><br>
+<a href="village-over-stronghold.html">View details →</a>
+</div>
 
-  <div class="seed-card">
-    <h3>Jungle Temple Explorer</h3>
-    <p><b>Seed:</b> 348912349</p>
-    <p><b>Edition:</b> Java</p>
-    <p><b>Version:</b> 1.20+</p>
-    <p>
-      Dense jungle spawn with a jungle temple and bamboo forest nearby.
-      Great for exploration-focused gameplay.
-    </p>
-  </div>
+<div class="card" data-edition="bedrock" data-version="1.21">
+<h3>Frozen Peaks Spawn</h3>
+<p>Seed: -918273645</p>
+<p>Bedrock 1.21</p>
+<button onclick="copySeed('-918273645')">Copy Seed</button><br><br>
+<a href="frozen-peaks-spawn.html">View details →</a>
+</div>
 
-  <div class="seed-card">
-    <h3>Frozen Peaks Start</h3>
-    <p><b>Seed:</b> -918273645</p>
-    <p><b>Edition:</b> Bedrock</p>
-    <p><b>Version:</b> 1.21</p>
-    <p>
-      Start near frozen peaks with nearby caves and iron veins,
-      offering a challenging but rewarding survival experience.
-    </p>
-  </div>
+<div class="card" data-edition="bedrock" data-version="1.21">
+<h3>Ocean Monument Nearby</h3>
+<p>Seed: -554433221</p>
+<p>Bedrock 1.21</p>
+<button onclick="copySeed('-554433221')">Copy Seed</button><br><br>
+<a href="ocean-monument-nearby.html">View details →</a>
+</div>
+</main>
 
-  <div class="seed-card">
-    <h3>Plains Village + Stronghold</h3>
-    <p><b>Seed:</b> 667788990</p>
-    <p><b>Edition:</b> Java</p>
-    <p><b>Version:</b> 1.21</p>
-    <p>
-      Plains village spawn with a stronghold located within 1,000 blocks,
-      perfect for speedrunners and casual players alike.
-    </p>
-  </div>
-
-  <div class="seed-card">
-    <h3>Ocean Monument Start</h3>
-    <p><b>Seed:</b> -554433221</p>
-    <p><b>Edition:</b> Bedrock</p>
-    <p><b>Version:</b> 1.20+</p>
-    <p>
-      Spawn close to an ocean monument and coral reefs,
-      offering a unique underwater exploration experience.
-    </p>
-  </div>
-
-</section>
+<div class="pagination"><a href="index1.html">1</a><a href="index2.html">2</a><a href="index3.html">3</a></div>
 
 <footer>
-  <a href="about.html">About</a> •
-  <a href="contact.html">Contact</a> •
+  <a href="about.html">About</a>
   <a href="privacy.html">Privacy Policy</a><br><br>
   © 2025 VulkanSeeds
 </footer>
 
-</body>
-</html>
+</body></html>
